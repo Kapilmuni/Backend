@@ -34,7 +34,7 @@ switch (operation) {
         })
         break;
     case 'append':
-        fs.appendFile(fileName,`\n{content}`,(err)=>{
+        fs.appendFile(fileName,`\n${content}`,(err)=>{
             if(err){
                 console.log(err)
             }else{
@@ -42,6 +42,26 @@ switch (operation) {
             }
         })
         break;
+        case 'rename':
+        fs.rename(fileName,content,(err)=>{
+            if(err){
+                console.log(err)
+            }else{
+                console.log(`File '${fileName}' changed to '${content}' `)
+            }
+        })
+        break;
+        case 'list':
+            fs.readdir(fileName, (err, files) => {
+                if (err) {
+                  console.error(err);
+                } else {
+                  console.log(`Contents of '${fileName}':`);
+                  files.forEach((f) => console.log(f));
+                }
+              });
+              break;
     default:
+        console.log(`Invalid operation '${operation}'`);
         break;
 }

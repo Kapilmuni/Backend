@@ -1,0 +1,2 @@
+The contents of the file "test.txt"new content
+{content}

@@ -40,7 +40,7 @@ switch (operation) {
             }else{
                 console.log(`File '${fileName}' appended`)
             }
-        })
+        })                          
         break;
         case 'rename':
         fs.rename(fileName,content,(err)=>{
